@@ -7,16 +7,28 @@
 //Sidan ska inte använda echo eller skriva någon output förutom true eller false, beroende på om horoskopet sparades.
 
 
-
-
 session_start();
+include "horoscopes.php";
 
 if($_SERVER["REQUEST_METHOD"]=="POST")  {
-   if(isset($_POST["action"]) && $_POST["action"] == "addHoroscope" && isset($_POST["day"]) && isset($_POST["month"])) {
+  
+   if( isset($_POST["user_date"])) {
 
-       $day = $_POST["day"];
-       $month = $_POST["month"];
+      $data = explode('-', $_POST['user_date']);
+      $mmdd = $data[1] . '-' . $data[2];
+      $result = '';
 
-        json_encode(array("status"=>true));
+      foreach ($horoscope as $horo => $dates) {
+            if ($mmdd >= $dates['start'] && $mmdd <= $dates['end']) {
+            $result = $horo;
+            $_SESSION[$mmdd] = $horo;
+
+            break;
+         }
+      }
+
+
+      echo json_encode(array("firas"=>$result));
+      exit;
    }
 }

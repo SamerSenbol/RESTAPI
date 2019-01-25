@@ -1,75 +1,23 @@
 function addHoroscope()   {
-    // hämta upp datum ifrån input
-    // Skapa formdata av datum
-    // fetch med method POST, och body formdata
+   console.log('user_date'); 
+var formData = new FormData();
+
+formData.append('user_date', document.getElementById("user_date").value);
+
+fetch('addHoroscope.php', {
+  method: 'POST',
+  body: formData
+})
+.then(response => response.json())
+.then(response => {
  
-    var day = document.getElementById("day").value
-    console.log(day)
- 
-    var month = document.getElementById("month").value
-    console.log(month)
- 
-    var data = new FormData();
-    data.append("action", "addHoroscope");
-    data.append("day", day);
-    data.append("month", month);
-    fetch("./addHoroscope.php", {
-        method: "POST",
-        body: data
-    }).then((response)=> {
-        return response.json()
-    }).then((result) => {
-        // Printa ut svaret på skärmen
-        console.log(result)
-    })
+
+    $('#table-id').append('<tr><td>'+response.firas+'</td></tr>');
+
+
+})
+.catch(error => console.error('Error:', error));
  }
-
-////////////////////////////////////////////////////////////////////////////////
-function viewHoroscope() {
-    $.ajax({
-        url: "./viewHoroscope.php",
-        method: "GET",
-        cache: false,
-        success: function(html) {
-            $("#results").append(html);
-        }
-        
-    })
-    }
-    
-function addHoroscope() {
-    $.ajax({
-        url: "./addHoroscope.php",
-        method: "POST",
-        cache: false,
-        success: function(html) {
-            $("#results").append(html);
-        }
-    })
-}
-
-function updateHoroscope() {
-    $.ajax({
-        url: "./updateHoroscope.php",
-        method: "PUT",
-        cache: false,
-        success: function(html) {
-            $("#results").append(html);
-        }
-    })
-}
-
-function deleteHoroscope() {
-    $.ajax({
-        url: "./deleteHoroscope.php",
-        method: "DELETE",
-        cache: false,
-        success: function(html) {
-            $("#results").append(html);
-        }
-    })
-}
-
 
 
 
