@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +16,15 @@
   </head>
 
   <body>
-    
-     <div class="container">
-      <div class="myHoroscope"></div>
-      <input id="user_date" value="" type="date"><br>
-      <button class="Add" type="submit" onclick="addHoroscope()">Add</button>
-      <button class="update" type="submit" onclick="updateHoroscope()">Update</button>
-      <button class="delete" type="submit" onclick="deleteHoroscope()">Delete</button>
+      <div class="container">
+        <input id="user_date" value="" type="date"><br>
+        <button class="Add" type="submit" onclick="addHoroscope()">Add</button>
+        <button class="update" type="submit" onclick="updateHoroscope()">Update</button>
+        <button class="delete" type="submit" onclick="deleteHoroscope()">Delete</button>
       </div>
-
-      <table id="table-id">
-      
-      </table>
+      <div>
+        <table id="table-id">
+        </table>
+      </div>
   </body>
-
 </html>

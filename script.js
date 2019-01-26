@@ -12,7 +12,7 @@ fetch('addHoroscope.php', {
 .then(response => {
  
 
-    $('#table-id').append('<tr><td>'+response.firas+'</td></tr>');
+  $('#table-id').append('<tr><td>'+response.firas+'</td></tr>');
 
 
 })
@@ -20,7 +20,5 @@ fetch('addHoroscope.php', {
  }
 
 
-
-
-
-    
+ //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+ //https://www.w3schools.com/jquery/html_append.asp
