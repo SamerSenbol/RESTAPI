@@ -1,7 +1,7 @@
 <?php
-//sidan ska bara gå att begära via PUT,  den ska kolla efter ett födelsedatum i PUT datan, det finns ingen inbyggd $_PUT men ni kan skapa den själva genom att köra denna raden längst upp i filen:parse_str(file_get_contents("php://input"), $_PUT);räkna ut vilket horoskop födelsedatumet tillhör och uppdaterade det sparade horoskopet som finns i $_SESSION och skriva ut true.
+// page should only be able to request via PUT, it should check for a date of birth in the PUT data, there is no built-in $ _PUT but you can create it yourself by running this row at the top of the file: parse_str (file_get_contents ("php: // input "), $ _PUT), calculate which horoscope the date of birth belongs and updated the saved horoscope contained in $ _SESSION and print true.
 
-//Om inget horoskop finns i $_SESSION ska sidan inte uppdatera något och skriva ut false.
+// If no horoscope is in $ _SESSION, the page should not update anything and print false.
 
     parse_str(file_get_contents("php://input"), $_PUT);
     

@@ -1,5 +1,5 @@
 <?php
-//sidan ska bara gå att begära via DELETE,  den ska ta bort det sparade horoskopet i $_SESSION och echo:a true. Om inget finns sparat ska den echo:a false.
+// the page should only be requested via DELETE, it should delete the saved horoscope in $ _SESSION and echo: a true. If nothing is saved, it should echo false.
 
 
 session_start();
