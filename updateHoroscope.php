@@ -9,8 +9,8 @@
     require "./addHoroscope.php";
     if($_SERVER['REQUEST_METHOD'] == 'PUT'){
         
-        if(isset($_SESSION["horoskop"])) {
+        if(isset($_SESSION["Horoscope"])) {
             session_unset();
-            $_SESSION["horoskop"] = $personNummer;
+            $_SESSION["Horoscope"] = $personNummer;
         }
     }

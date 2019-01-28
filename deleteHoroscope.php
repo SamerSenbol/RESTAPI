@@ -3,8 +3,9 @@
 
 
 session_start();
-if (isset($_SESSION['horoscope'])) {
-    unset($_SESSION['horoscope']);
+if (isset($_SESSION['user_date'])) {
+    session_destroy('user_date');
+    //unset($_SESSION['user_date']);
     echo 'true';
 } else {
     echo 'false';
