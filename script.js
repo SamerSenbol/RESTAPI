@@ -31,13 +31,13 @@ fetch('deleteHoroscope.php', {
   //body: formData
 })
 .then(response => response.json())
-.then(response => {
+//.then(response => {
  
 
   //$('#table-id').append('<tr><td>'+response.firas+'</td></tr>');
 
 
-})
+//})
 .catch(error => console.error('Error:', error));
  }
 

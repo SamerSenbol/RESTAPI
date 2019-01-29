@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")  {
       foreach ($horoscope as $horo => $dates) {
             if ($mmdd >= $dates['start'] && $mmdd <= $dates['end']) {
             $result = $horo;
-            $_SESSION[$mmdd] = $horo;
+            $_SESSION["horoscope"] = $horo;
 
             break;
          }
