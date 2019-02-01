@@ -24,7 +24,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")  {
             break;
          }
       }
-      echo json_encode(array("firas"=>$result));
+      echo json_encode(true);
+      exit;
+   } else {
+      echo json_encode(false); 
       exit;
    }
 }

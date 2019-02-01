@@ -1,3 +1,5 @@
+getHoroscope();
+
 function addHoroscope()   {
    console.log('user_date'); 
 var formData = new FormData();
@@ -7,17 +9,26 @@ formData.append('user_date', document.getElementById("user_date").value);
 fetch('addHoroscope.php', {
   method: 'POST',
   body: formData
-})
-.then(response => response.json())
-.then(response => {
- 
+  }).then((response)=>{
+    return response.json()
+  }).then((result) => {
+    getHoroscope();
+    console.log(result);
+  }).catch((error) => {
+    console.error('Error:', error)
+  });
+}
 
-  $('#table-id').append('<tr><td>'+response.firas+'</td></tr>');
-
-
-})
-.catch(error => console.error('Error:', error));
- }
+function getHoroscope(){
+  fetch("./viewHoroscope.php", {
+    method:'GET'
+  }).then((response) => {
+    
+    return response.json()
+  }).then((result)=>{
+    $('#table-id').append('<tr><td>'+result+'</td></tr>');
+  })
+}
 
 
 function deleteHoroscope()   {
@@ -61,8 +72,11 @@ fetch('updateHoroscope.php', {
 
 })
 .catch(error => console.error('Error:', error));
- }
+ } 
 
 
  //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
  //https://www.w3schools.com/jquery/html_append.asp
+
+
+//////////////////////////////////////////////////////////////////////////
