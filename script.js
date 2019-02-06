@@ -22,12 +22,14 @@ fetch('addHoroscope.php', {
 function getHoroscope(){
   fetch("./viewHoroscope.php", {
     method:'GET'
+    
   }).then((response) => {
     
     return response.json()
+    
   }).then((result)=>{
     $('#table-id').append('<tr><td>'+result+'</td></tr>');
-  })
+  }) 
 }
 
 function deleteHoroscope() {
@@ -35,7 +37,9 @@ fetch('deleteHoroscope.php', {
   method: 'DELETE',
 })
 .then(response => response.json())
+
 .catch(error => console.error('Error:', error));
+location.reload();
 }
 
 function updateHoroscope() {
