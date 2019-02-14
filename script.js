@@ -1,4 +1,4 @@
-getHoroscope();
+viewHoroscope();
 
 function addHoroscope()   {
   console.log('user_date'); 
@@ -12,14 +12,14 @@ fetch('addHoroscope.php', {
   }).then((response)=>{
     return response.json()
   }).then((result) => {
-    getHoroscope();
+    viewHoroscope();
     console.log(result);
   }).catch((error) => {
     console.error('Error:', error)
   });
 }
 
-function getHoroscope(){
+function viewHoroscope(){
   fetch("./viewHoroscope.php", {
     method:'GET'
     

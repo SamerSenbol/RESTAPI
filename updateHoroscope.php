@@ -4,7 +4,6 @@
 // If no horoscope is in $ _SESSION, the page should not update anything and print false.
 
     parse_str(file_get_contents("php://input"), $_PUT);
-    
     session_start();
     require "./addHoroscope.php";
     if($_SERVER['REQUEST_METHOD'] == 'PUT'){
