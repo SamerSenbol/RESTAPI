@@ -28,8 +28,10 @@ function getHoroscope(){
     return response.json()
     
   }).then((result)=>{
-    $('#table-id').append('<tr><td>'+result+'</td></tr>');
-  }) 
+    document.getElementById("HoroscopeSign").innerHTML = result;
+  }).catch((error) => {
+    console.error('Error:', error)
+  }); 
 }
 
 function deleteHoroscope() {
@@ -53,6 +55,6 @@ fetch('updateHoroscope.php', {
 } 
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-//https://www.w3schools.com/jquery/html_append.asp
+
 
 

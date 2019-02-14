@@ -23,8 +23,8 @@
       <button class="delete" type="submit" onclick="deleteHoroscope()">Delete</button>
     </div>
     <div>
-      <table id="table-id">
-      </table>
+      <p id="HoroscopeSign">
+      </p>
     </div>
     <script src="./script.js"></script>
   </body>

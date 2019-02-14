@@ -4,10 +4,12 @@
 
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+    header('Content-Type: application/json');
+
     if (isset($_SESSION["horoscope"])) {
-        echo json_encode(array($_SESSION["horoscope"]));
+        echo json_encode($_SESSION["horoscope"]);
     }
     else{
-        return null;
+        echo json_encode("");
     }
 }

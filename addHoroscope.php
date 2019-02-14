@@ -8,7 +8,7 @@
 session_start();
 include "horoscopes.php";
 
-if($_SERVER["REQUEST_METHOD"]=="POST")  {
+if($_SERVER["REQUEST_METHOD"]=="POST") {
   
    if( isset($_POST["user_date"])) {
 
@@ -26,8 +26,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST")  {
       }
       echo json_encode(true);
       exit;
-   } else {
-      echo json_encode(false); 
-      exit;
+   }else{
+      echo json_encode(array("status" => false, "error" => "missing user data")); 
    }
-}
+   }else{
+      echo json_encode(array("status" => false, "error" => "faulty request method"));
+   }
