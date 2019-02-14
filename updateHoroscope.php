@@ -10,6 +10,7 @@
         
         if(isset($_SESSION["Horoscope"])) {
             session_unset();
-            $_SESSION["Horoscope"] = $personNummer;
+        
+            //$_SESSION["Horoscope"] = $personNummer;
         }
     }

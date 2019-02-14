@@ -39,7 +39,6 @@ fetch('deleteHoroscope.php', {
   method: 'DELETE',
 })
 .then(response => response.json())
-
 .catch(error => console.error('Error:', error));
 location.reload();
 }
@@ -49,8 +48,6 @@ fetch('updateHoroscope.php', {
   method: 'PUT'
 })
 .then(response => response.json())
-.then(response => { 
-})
 .catch(error => console.error('Error:', error));
 } 
 
