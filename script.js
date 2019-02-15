@@ -1,10 +1,10 @@
 viewHoroscope();
 
 function addHoroscope()   {
-  console.log('user_date'); 
-var formData = new FormData();
+  console.log('user_date');
 
-formData.append('user_date', document.getElementById("user_date").value);
+  var formData = new FormData();
+  formData.append('user_date', document.getElementById("user_date").value);
 
 fetch('addHoroscope.php', {
   method: 'POST',
@@ -34,15 +34,6 @@ function viewHoroscope(){
   }); 
 }
 
-function deleteHoroscope() {
-fetch('deleteHoroscope.php', {
-  method: 'DELETE',
-})
-.then(response => response.json())
-.catch(error => console.error('Error:', error));
-location.reload();
-}
-
 $('#update').on('click', function () { 
   $.ajax({
       url: 'updateHoroscope.php',
@@ -55,15 +46,11 @@ $('#update').on('click', function () {
   viewHoroscope()
 });
 
-/* function updateHoroscope() {
-fetch('updateHoroscope.php', {
-  method: 'PUT'
+function deleteHoroscope() {
+fetch('deleteHoroscope.php', {
+  method: 'DELETE',
 })
 .then(response => response.json())
 .catch(error => console.error('Error:', error));
-}  */
-
-//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-
-
-
+location.reload();
+}
