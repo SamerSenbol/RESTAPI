@@ -38,7 +38,7 @@ $('#update').on('click', function () {
       method: 'PUT',
       data: {userData: $("#user_date").val()},
       success: function (data) {
-          console.log(data);
+        console.log(data);
       }
   });
   viewHoroscope()
