@@ -9,9 +9,9 @@
     include "horoscopes.php";
     
     if($_SERVER['REQUEST_METHOD'] == 'PUT'){
-        if(isset($_SESSION['horoscope'])&&($_PUT["Personnummer"])){
+        if(isset($_SESSION['horoscope'])&&($_PUT["userData"])){
 
-        $data = explode('-', $_PUT['Personnummer']);
+        $data = explode('-', $_PUT['userData']);
         $mmdd = $data[1] . '-' . $data[2];
         $result = '';
 

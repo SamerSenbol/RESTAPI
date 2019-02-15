@@ -38,7 +38,7 @@ $('#update').on('click', function () {
   $.ajax({
       url: 'updateHoroscope.php',
       method: 'PUT',
-      data: {Personnummer: $("#user_date").val()},
+      data: {userData: $("#user_date").val()},
       success: function (data) {
           console.log(data);
       }
