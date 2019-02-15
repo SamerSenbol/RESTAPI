@@ -47,11 +47,9 @@ $('#update').on('click', function () {
   $.ajax({
       url: 'updateHoroscope.php',
       method: 'PUT',
-      data: {formData: $("#user_date").val()},
-      success: function (formData) {
-          //console.log(user_date);
-          //var formData = new FormData();
-          //formData.append('user_date', document.getElementById("user_date").value);
+      data: {Personnummer: $("#user_date").val()},
+      success: function (data) {
+          console.log(data);
       }
   });
   viewHoroscope()

@@ -5,21 +5,23 @@
 
     parse_str(file_get_contents("php://input"), $_PUT);
     session_start();
+
+    include "horoscopes.php";
     
     if($_SERVER['REQUEST_METHOD'] == 'PUT'){
-        if(isset($_SESSION['horoscope'])&&($_PUT["user_date"])){
+        if(isset($_SESSION['horoscope'])&&($_PUT["Personnummer"])){
 
-        $data = explode('-', $_PUT['user_date']);
+        $data = explode('-', $_PUT['Personnummer']);
         $mmdd = $data[1] . '-' . $data[2];
         $result = '';
-         
+
         foreach($horoscope as $horo => $dates) {
             if ($mmdd >= $dates['start'] && $mmdd <= $dates['end']) {
                $result = $horo;
                $_SESSION["horoscope"] = $horo;
                break;
             }
-         }
+        }
          echo json_encode(true);
          exit;
         }
