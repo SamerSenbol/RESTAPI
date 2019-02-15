@@ -47,12 +47,14 @@ $('#update').on('click', function () {
   $.ajax({
       url: 'updateHoroscope.php',
       method: 'PUT',
-      data: {birthnumber: $("#user_date").val()},
-      success: function (data) {
-          console.log(data);
+      data: {formData: $("#user_date").val()},
+      success: function (formData) {
+          //console.log(user_date);
+          //var formData = new FormData();
+          //formData.append('user_date', document.getElementById("user_date").value);
       }
   });
-  viewHoroscope();
+  viewHoroscope()
 });
 
 /* function updateHoroscope() {

@@ -9,26 +9,30 @@ session_start();
 include "horoscopes.php";
 
 if($_SERVER["REQUEST_METHOD"]=="POST") {
-  
-   if( isset($_POST["user_date"])) {
+   if(isset($_SESSION["horoscope"])){
+      echo json_encode(false);
+   } else {
+      if(isset($_POST["user_date"])) {
 
-      $data = explode('-', $_POST['user_date']);
-      $mmdd = $data[1] . '-' . $data[2];
-      $result = '';
-      
-      foreach ($horoscope as $horo => $dates) {
-            if ($mmdd >= $dates['start'] && $mmdd <= $dates['end']) {
-            $result = $horo;
-            $_SESSION["horoscope"] = $horo;
+         $data = explode('-', $_POST['user_date']);
+         $mmdd = $data[1] . '-' . $data[2];
+         $result = '';
+         
+         foreach ($horoscope as $horo => $dates) {
+               if ($mmdd >= $dates['start'] && $mmdd <= $dates['end']) {
+               $result = $horo;
+               $_SESSION["horoscope"] = $horo;
 
-            break;
+               break;
+            }
          }
+
+         echo json_encode(true);
+         exit;
+      } else {
+         echo json_encode(array("status" => false, "error" => "missing user data")); 
       }
-      echo json_encode(true);
-      exit;
-   }else{
-      echo json_encode(array("status" => false, "error" => "missing user data")); 
    }
-   }else{
-      echo json_encode(array("status" => false, "error" => "faulty request method"));
-   }
+} else {
+   echo json_encode(array("status" => false, "error" => "faulty request method"));
+}
