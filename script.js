@@ -1,6 +1,4 @@
-viewHoroscope();
-
-function addHoroscope()   {
+function addHoroscope() {
   console.log('user_date');
 
   var formData = new FormData();
@@ -19,7 +17,7 @@ fetch('addHoroscope.php', {
   });
 }
 
-function viewHoroscope(){
+function viewHoroscope() {
   fetch("./viewHoroscope.php", {
     method:'GET'
     
