@@ -19,7 +19,7 @@
     <div class="container">
       <input id="user_date" value="" type="date"><br>
       <button class="Add" type="submit" onclick="addHoroscope()">Add</button>
-      <button class="update" type="submit" onclick="updateHoroscope()">Update</button>
+      <button id="update" type="submit">Update</button>
       <button class="delete" type="submit" onclick="deleteHoroscope()">Delete</button>
     </div>
     <div>

@@ -43,13 +43,25 @@ fetch('deleteHoroscope.php', {
 location.reload();
 }
 
-function updateHoroscope() {
+$('#update').on('click', function () { 
+  $.ajax({
+      url: 'updateHoroscope.php',
+      method: 'PUT',
+      data: {birthnumber: $("#user_date").val()},
+      success: function (data) {
+          console.log(data);
+      }
+  });
+  viewHoroscope();
+});
+
+/* function updateHoroscope() {
 fetch('updateHoroscope.php', {
   method: 'PUT'
 })
 .then(response => response.json())
 .catch(error => console.error('Error:', error));
-} 
+}  */
 
 //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
