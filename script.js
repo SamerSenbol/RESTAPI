@@ -31,7 +31,7 @@ function viewHoroscope() {
     console.error('Error:', error)
   }); 
 }
-
+// We changed the user_data to userData when we use Ajax.
 $('#update').on('click', function () { 
   $.ajax({
       url: 'updateHoroscope.php',
