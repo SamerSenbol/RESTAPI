@@ -1,3 +1,4 @@
+viewHoroscope()
 function addHoroscope() {
   console.log('user_date');
 
